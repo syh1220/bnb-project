@@ -3,17 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <style>html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }</style>
   <title>BNB 작업 시스템</title>
   <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1U_spkDUiVyo9-IMLyOSAzJ5L1I6t2yID">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ffffff">
   <style>
-    html, body { margin:0; padding:0; height:100%; overflow:hidden; }
-    iframe { border:none; width:100%; height:100%; display:block; }
+    html, body { margin:0; padding:0; height:100%; overflow:hidden; background:#f3f4f6; }
+    #frameWrap { width:100%; height:100%; overflow:hidden; position:relative; }
+    #bnbFrame {
+      position:absolute;
+      top:0;
+      left:0;
+      border:none;
+      width:400px;
+      transform-origin: top left;
+    }
   </style>
 </head>
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbylYbl0Tqx0D9hXve8PG3iu1rik0Eegt0EP0vZALMLY3dVLWovbZAuK_L9J479ipYg5/exec"></iframe>
+  <div id="frameWrap">
+    <iframe id="bnbFrame" src="https://script.google.com/macros/s/AKfycbylYbl0Tqx0D9hXve8PG3iu1rik0Eegt0EP0vZALMLY3dVLWovbZAuK_L9J479ipYg5/exec"></iframe>
+  </div>
+  <script>
+    function fitFrame() {
+      var frame = document.getElementById('bnbFrame');
+      var scale = window.innerWidth / 400;
+      frame.style.transform = 'scale(' + scale + ')';
+      frame.style.height = (window.innerHeight / scale) + 'px';
+    }
+    window.addEventListener('resize', fitFrame);
+    window.addEventListener('orientationchange', fitFrame);
+    fitFrame();
+  </script>
 </body>
 </html>
