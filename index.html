@@ -8,33 +8,11 @@
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ffffff">
   <style>
-    html, body { margin:0; padding:0; height:100%; overflow:hidden; background:#f3f4f6; }
-    #frameWrap { width:100%; height:100%; overflow:hidden; position:relative; }
-    #bnbFrame {
-      position:absolute;
-      top:0;
-      left:0;
-      border:none;
-      width:384px;
-      transform-origin: top left;
-    }
+    html, body { margin:0; padding:0; height:100%; overflow:hidden; }
+    iframe { border:none; width:100%; height:100%; display:block; }
   </style>
 </head>
 <body>
-  <div id="frameWrap">
-    <iframe id="bnbFrame" src="https://script.google.com/macros/s/AKfycbylYbl0Tqx0D9hXve8PG3iu1rik0Eegt0EP0vZALMLY3dVLWovbZAuK_L9J479ipYg5/exec"></iframe>
-  </div>
-  <script>
-    function fitFrame() {
-      var frame = document.getElementById('bnbFrame');
-      var scale = window.innerWidth / 384;
-      frame.style.transform = 'scale(' + scale + ')';
-      frame.style.height = (window.innerHeight / scale) + 'px';
-    }
-    window.addEventListener('resize', fitFrame);
-    window.addEventListener('orientationchange', fitFrame);
-    window.addEventListener('load', fitFrame);
-    fitFrame();
-  </script>
+  <iframe src="https://script.google.com/macros/s/AKfycbylYbl0Tqx0D9hXve8PG3iu1rik0Eegt0EP0vZALMLY3dVLWovbZAuK_L9J479ipYg5/exec"></iframe>
 </body>
 </html>
