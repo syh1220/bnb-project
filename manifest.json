@@ -1,0 +1,15 @@
+{
+  "name": "BNB 작업 시스템",
+  "short_name": "BNB",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "https://lh3.googleusercontent.com/d/1U_spkDUiVyo9-IMLyOSAzJ5L1I6t2yID",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
